@@ -1,4 +1,7 @@
-# Build results
+# Geral
+TODO.md
+
+# .NET Build results
 bin/
 obj/
 
@@ -8,10 +11,8 @@ obj/
 *.userosscache
 *.sln.docstates
 
-# VS Code
+# IDEs
 .vscode/
-
-# Rider
 .idea/
 
 # DotCover
@@ -36,16 +37,14 @@ artifacts/
 *.pfx
 *.key
 
-# Others
+# Databases
 *.db
 *.sqlite
-*.log
 
 # EF Migrations snapshot
 Migrations/*ModelSnapshot.cs
 
 # JetBrains Rider
-.idea/
 *.sln.iml
 
 # Test Results
@@ -53,17 +52,6 @@ TestResults/
 *.trx
 *.coverage
 *.coveragexml
-
-# npm related (if using frontend integration)
-node_modules/
-dist/
-
-# Environment files
-.env
-.env.*
-
-# Logs
-*.log
 
 # Resharper
 _ReSharper*/
@@ -74,3 +62,29 @@ _ReSharper*/
 
 # Docker
 docker-compose.override.yml
+
+# Node.js / Frontend
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+!.vscode/extensions.json
+.DS_Store
+*.ntvs*
+*.njsproj
+*.sw?
+
+# Environment files
+.env
+.env.*
