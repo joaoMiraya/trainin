@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root{
+    --primary-color: #0070F3;
+    --secondary-color: #00C48C;
+    --danger-color: #FF4D4F;
+    --contrast-color: #FFC300;
+    --dark-color: #1A1A1A;
+    --medium-dark-color: #272727;
+    --minimal-dark-color: #343434;
+    --full-white: #FFFFFF;
+    --light-gray: #F7F7F8;
+    --neutro-200: #E5E7EB;
+    --neutro-300: #9CA3AF;
+    --neutro-400: #6B7280;
+}
+
+@theme {
+    --color-primary: var(--primary-color);
+    --color-secondary: var(--secondary-color);
+    --color-text: var(--dark-color);
+    --color-dark: var(--dark-color);
+    --color-medium-dark: var(--medium-dark-color);
+    --color-minimal-dark: var(--minimal-dark-color);
+    --color-contrast: var(--contrast-color);
+    --color-danger: var(--danger-color);
+    --color-light-gray: var(--light-gray);
+    --color-full-white: var(--full-white);
+    --color-neutro-200: var(--neutro-200);
+    --color-neutro-300: var(--neutro-300);
+    --color-neutro-400: var(--neutro-400);
+  }
+
+  .playwrite-au-sa-logo {
+    font-family: "Playwrite AU SA", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+  

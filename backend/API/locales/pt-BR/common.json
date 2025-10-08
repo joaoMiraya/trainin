@@ -1,0 +1,12 @@
+{
+    "server": {
+        "error": {
+            "notFound": "Página não encontrada",
+            "internalServerError": "Erro interno do servidor"
+        },
+        "success": {
+            "dataFetched": "Dados recuperados com sucesso",
+            "dataSaved": "Dados salvos com sucesso"
+        }
+    }
+}

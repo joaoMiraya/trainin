@@ -1,0 +1,76 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/
+
+# DotCover
+*.dotCover
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Publish results
+**/publish/
+**/out/
+
+# User secrets
+secrets.json
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Certificate
+*.pfx
+*.key
+
+# Others
+*.db
+*.sqlite
+*.log
+
+# EF Migrations snapshot
+Migrations/*ModelSnapshot.cs
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Test Results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# npm related (if using frontend integration)
+node_modules/
+dist/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# Local tools
+.tools/
+
+# Docker
+docker-compose.override.yml

@@ -1,0 +1,86 @@
+
+services:
+  app:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: localhost:8080
+        GOOGLE_API_KEY:
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+    - VITE_API_URL=localhost:8080
+    depends_on:
+      - api
+    networks:
+      - trainin_network
+
+  api:
+    build:
+      context: ../api
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: mysql://trainin:passwd@mysql:3306/trainin
+      DB_USER: admin
+      DB_PASSWORD: passwd
+      DB_HOST: mysql
+      PORT: 8080
+      NODE_ENV: production
+      JWT_SECRET: 6124dce3ccdabb98bc09f4ea1c8cac7e2129d11f
+      GOOGLE_API_KEY:
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - trainin_network
+
+  mysql:
+    image: mysql:8.0
+    container_name: trainin-database
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: trainin
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: passwd
+    volumes:
+      - mysql_volume_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - trainin_network
+
+  redis:
+    image: redis:7.4.1-alpine
+    container_name: trainin-redis-server
+    restart: unless-stopped
+    volumes:
+      - redis_volume_data:/data
+    ports:
+      - 6379:6379
+    networks:
+      - trainin_network
+
+  redis_insight:
+    image: redislabs/redisinsight:1.14.0
+    container_name: trainin-redis_insight
+    restart: unless-stopped
+    ports:
+      - 8001:8001
+    volumes:
+      - redis_insight_volume_data:/db
+    networks:
+      - trainin_network
+
+volumes:
+  mysql_volume_data:
+  redis_volume_data:
+  redis_insight_volume_data:
+networks:
+  trainin_network:
+    driver: bridge

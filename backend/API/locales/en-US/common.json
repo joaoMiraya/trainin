@@ -1,0 +1,12 @@
+{
+    "server": {
+        "error": {
+            "notFound": "Page not found",
+            "internalServerError": "Internal server error"
+        },
+        "success": {
+            "dataFetched": "Data fetched successfully",
+            "dataSaved": "Data saved successfully"
+        }
+    }
+}
